@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+/* ======================================================
+   THEME VALUES
+   These change by mode (light / dark / future themes)
+   Raw values only. No Tailwind naming here.
+   ====================================================== */
+
+:root {
+/* Brand */
+--color-brand-primary: #0A0F24;
+--color-brand-secondary: #1F2937;
+--color-brand-accent: #5C6BC0;
+}
+
+/* Light mode (default) */
+
+:root,
+[data-theme="light"] {
+
+  /* Backgrounds / surfaces */
+  --bg: #F9FAFB;
+  --surface: #FFFFFF;
+  --surface-muted: #F3F4F6;
+  --overlay: rgba(15, 23, 42, 0.4);
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --text-disabled: #9CA3AF;
+  --text-inverse: #FFFFFF;
+
+  /* Borders / dividers */
+  --border-muted: #E5E7EB;
+  --border: #D1D5DB;
+  --border-strong: #9CA3AF;
+
+  /* Feedback */
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --success-border: #86efac;
+  --success-text: #14532d;
+
+  --warning: #f59e0b;
+  --warning-bg: #fef3c7;
+  --warning-border: #fde68a;
+  --warning-text: #92400e;
+
+  --error: #dc2626;
+  --error-bg: #fee2e2;
+  --error-border: #fca5a5;
+  --error-text: #7f1d1d;
+
+  --info: #2563eb;
+  --info-bg: #dbeafe;
+  --info-border: #93c5fd;
+  --info-text: #1e3a8a;
+}
+
+/* Dark mode */
+
+[data-theme="dark"] {
+
+  /* Backgrounds / surfaces */
+  --bg: #0B1020;
+  --surface: #111827;
+  --surface-muted: #1F2937;
+  --overlay: rgba(2, 6, 23, 0.7);
+
+  /* Text */
+  --text-primary: #F9FAFB;
+  --text-secondary: #D1D5DB;
+  --text-muted: #9CA3AF;
+  --text-disabled: #6B7280;
+  --text-inverse: #111827;
+
+  /* Borders / dividers */
+  --border-muted: #374151;
+  --border: #4B5563;
+  --border-strong: #9CA3AF;
+
+  /* Feedback (darker, higher contrast variants) */
+  --success: #22c55e;
+  --success-bg: #052e16;
+  --success-border: #14532d;
+  --success-text: #dcfce7;
+
+  --warning: #fbbf24;
+  --warning-bg: #451a03;
+  --warning-border: #92400e;
+  --warning-text: #fffbeb;
+
+  --error: #ef4444;
+  --error-bg: #450a0a;
+  --error-border: #7f1d1d;
+  --error-text: #fee2e2;
+
+  --info: #60a5fa;
+  --info-bg: #0b1b3a;
+  --info-border: #1e3a8a;
+  --info-text: #dbeafe;
+}
+
+/* ======================================================
+   SEMANTIC TOKENS (Tailwind-facing)
+   These never change names. Values are delegated via var().
+   ====================================================== */
+
+@theme {
+
+  /* Brand */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+
+  /* Backgrounds / surfaces */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-overlay: var(--overlay);
+
+  /* Text */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-inverse: var(--text-inverse);
+
+  /* Borders / dividers */
+  --color-border-muted: var(--border-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  /* Feedback */
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-success-border: var(--success-border);
+  --color-success-text: var(--success-text);
+
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --color-warning-text: var(--warning-text);
+
+  --color-error: var(--error);
+  --color-error-bg: var(--error-bg);
+  --color-error-border: var(--error-border);
+  --color-error-text: var(--error-text);
+
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-info-border: var(--info-border);
+  --color-info-text: var(--info-text);
+
+  /* Buttons */
+
+  --color-button-primary-bg: var(--color-brand-accent);
+  --color-button-primary-text: var(--color-text-inverse);
+  --color-button-primary-hover: color-mix(in srgb, var(--color-brand-accent) 90%, black);
+  --color-button-primary-focus: var(--color-brand-accent);
+}
+
+/* ======================================================
+   BASE DEFAULTS
+   ====================================================== */
+   
+/* @layer base {
+  auth-layout {
+    @apply flex min-h-full flex-col justify-center px-6 py-12 lg: px-8;
+  }
+} */
+
+/* ======================================================
+   Layer DEFAULTS
+   ====================================================== */
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/* ======================================================
+   Component DEFAULTS
+   ====================================================== */
+
+@layer components {
+  /* layout */
+
+  .centered-page {
+    @apply flex min-h-full flex-col justify-center px-6 py-12 lg:px-8;
+  }
+
+  .content-column {
+    @apply sm:mx-auto sm:w-full sm:max-w-sm;
+  }
+
+  .centered-media {
+    @apply mx-auto h-36 w-auto;
+  }
+
+  .section-title {
+    @apply mt-10 text-center text-2xl/9 font-bold tracking-tight text-text-primary;
+  }
+
+  .field-header {
+    @apply flex items-center justify-between;
+  }
+
+  .field-label {
+    @apply block text-sm/6 font-medium text-text-primary;
+  }
+
+  .field-error {
+    @apply text-error text-sm mt-1;
+  }
+
+  .input-base {
+    @apply block w-full rounded-md bg-surface px-3 py-1.5 text-text-primary placeholder:text-text-muted sm:text-sm/6;
+  }
+
+  .input-default {
+    @apply outline-1 -outline-offset-1 outline-border focus:outline-2 focus:outline-border-strong;
+  }
+
+  .input-error {
+    @apply outline-1 -outline-offset-1 outline-error focus:outline-2 focus:outline-error;
+  }
+
+  .button-primary {
+    @apply flex w-full items-center justify-center rounded-md px-3 py-1.5 text-sm/6 font-semibold bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-text)] shadow-sm transition-colors hover:bg-[var(--color-button-primary-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-button-primary-focus)];
+  }
+
+  .notification {
+    @apply flex gap-2 rounded-lg p-4 border;
+  }
+
+  .notification-title {
+    @apply font-semibold;
+  }
+
+  .notification-message {
+    @apply text-sm;
+  }
+
+
+  .notification-success {
+    @apply bg-success-bg text-success-text border-success-border;
+  }
+
+  .notification-error {
+    @apply bg-error-bg text-error-text border-error-border;
+  }
+
+  .notification-warning {
+    @apply bg-warning-bg text-warning-text border-warning-border;
+  }
+
+  .notification-info {
+    @apply bg-info-bg text-info-text border-info-border;
+  }
+
+  .support-link {
+    @apply text-sm font-semibold text-brand-accent hover:underline;
+  }
+
+  .support-link-2 {
+    @apply font-semibold text-brand-accent hover:text-brand-accent/80;
+  }
+
+  .support-text {
+    @apply mt-10 text-center text-sm/6 text-text-muted;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-lg p-6 space-y-4;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between;
+  }
+
+  .card-body {
+    @apply space-y-4;
+  }
+
+  .card-actions {
+    @apply flex justify-end;
+  }
+
+  .dashboard {
+    @apply bg-bg min-h-screen px-6 py-8;
+  }
+
+  .dashboard-section {
+    @apply max-w-6xl mx-auto space-y-6;
+  }
+
+  .dashboard-sidebar {
+    @apply max-w-sm;
+  }
+
+  .stack-xs {
+    @apply space-y-1;
+  }
+
+  .stack-sm {
+    @apply space-y-2;
+  }
+
+  .stack-md {
+    @apply space-y-4;
+  }
+
+  .product-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition;
+  }
+  .product-actions {
+    @apply absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition z-10
+  }
+
+  .product-title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+
+  .product-description {
+    @apply text-sm text-gray-600 line-clamp-2;
+  }
+
+  .button-edit {
+    @apply rounded bg-white/90 px-2 py-1 text-sm shadow hover:bg-gray-100;
+  }
+
+  .button-delete {
+    @apply rounded bg-red-50 px-2 py-1 text-sm text-red-600 shadow hover:bg-red-100;
+  }
+
+  .image-container {
+    @apply aspect-square bg-gray-100;
+  }
+
+  .image {
+    @apply h-full w-full object-cover;
+  }
+
+  .price {
+    @apply text-lg font-bold text-gray-900;
+  }
+
+  .pill-container {
+    @apply text-sm px-2 py-1 rounded-full bg-gray-100 text-gray-700;
+  }
+
+  .space-between-elements {
+    @apply flex items-center justify-between pt-2;
+  }
+}
+
