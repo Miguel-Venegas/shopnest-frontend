@@ -1,60 +1,42 @@
-import axios from "axios";
-
-const API_BASE_URL = import.meta.env.VITE_API_URL;
-
-const PRODUCTS_URL = `${API_BASE_URL}/api/products`;
-
+import api from "./api/client";
 
 // public
-
 const getAllProducts = async () => {
-  const res = await axios.get(`${PRODUCTS_URL}/public`);
+  const res = await api.get("/api/products/public");
   return res.data;
 };
 
 const getProductsByCategory = async (category) => {
-  const res = await axios.get(`${PRODUCTS_URL}/public`, {
+  const res = await api.get("/api/products/public", {
     params: { category },
   });
-
   return res.data;
 };
 
 // admin
-
 const getMyProducts = async () => {
-  const res = await axios.get(PRODUCTS_URL, {
-    withCredentials: true,
-  });
+  const res = await api.get("/api/products");
   return res.data;
 };
 
-
 const createProduct = async (productObject) => {
-
-  const res = await axios.post(PRODUCTS_URL, productObject, {
-    withCredentials: true
-  });
-
+  const res = await api.post("/api/products", productObject);
   return res.data;
 };
 
 const deleteProduct = async (id) => {
-  await axios.delete(`${PRODUCTS_URL}/${id}`, { withCredentials: true }
-  );
+  const res = await api.delete(`/api/products/${id}`);
+  return res.data; // optional: keep if your backend returns something
 };
 
 const updateProduct = async (productObject) => {
-  const res = await axios.put(`${PRODUCTS_URL}/${productObject.id}`,
-    {
-      name: productObject.name,
-      description: productObject.description,
-      price: productObject.price,
-      stockQuantity: productObject.stockQuantity,
-      imageUrl: productObject.imageUrl,
-    },
-    { withCredentials: true }
-  )
+  const res = await api.put(`/api/products/${productObject.id}`, {
+    name: productObject.name,
+    description: productObject.description,
+    price: productObject.price,
+    stockQuantity: productObject.stockQuantity,
+    imageUrl: productObject.imageUrl,
+  });
 
   return res.data;
 };
@@ -65,5 +47,5 @@ export default {
   deleteProduct,
   updateProduct,
   getAllProducts,
-  getProductsByCategory
+  getProductsByCategory,
 };

@@ -1,30 +1,28 @@
-import axios from "axios";
+import api from './api/client';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL;
-
-const ACCOUNTS_URL = `${API_BASE_URL}/api/accounts`;
+const ACCOUNTS_URL = `${import.meta.env.VITE_API_URL}/api/accounts`;
 
 export const signIn = async (email, password) => {
-  const res = await axios.post(`${ACCOUNTS_URL}/signin`, 
-    { email, password },
-    { withCredentials: true }
-);
-
+  const res = await api.post("/api/accounts/signin", { email, password });
   return res.data.user;
 };
 
-export const signUp = async (email, password, passwordConfirmation, firstName, lastName, businessName) => {
-  const res = await axios.post(`${ACCOUNTS_URL}/signup`, 
-    {
-      email,
-      password,
-      passwordConfirmation,
-      firstName,
-      lastName,
-      businessName,
-    },
-    { withCredentials: true }
-);
+export const signUp = async (
+  email,
+  password,
+  passwordConfirmation,
+  firstName,
+  lastName,
+  businessName
+) => {
+  const res = await api.post("/api/accounts/signup", {
+    email,
+    password,
+    passwordConfirmation,
+    firstName,
+    lastName,
+    businessName,
+  });
 
   return res.data;
 };
