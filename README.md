@@ -113,6 +113,12 @@ Backend Github repo URL: https://github.com/Miguel-Venegas/shopnest-backend
 
 ---
 
-## Environment Configuration
+## Roadmap
 
-The frontend uses environment variables for backend connectivity.
+Planned improvements and refinements:
+
+- Add product search with filters
+- Implement an autocomplete search component
+- Fix Safari/iOS browser issues related to cookies and CORS
+- Improve cart update responsiveness
+- Fix edge case where items can be added when stock is exhausted
