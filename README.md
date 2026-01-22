@@ -1,16 +1,118 @@
-# React + Vite
+# ShopNest — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for **ShopNest**, a full-stack e-commerce web app.  
+Built with **React (Vite)** and **Tailwind CSS**, and designed to work with a session-based backend API.
 
-Currently, two official plugins are available:
+This repository focuses on **UI state management, routing, and frontend–backend integration**, while core business logic and data integrity are handled by the backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The ShopNest frontend provides the user interface for two primary experiences:
 
-## Expanding the ESLint configuration
+- **Customers / Clients** can browse products and manage a shopping cart without creating an account.
+- **Merchants / Sellers** can authenticate and manage their product listings.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The frontend is intentionally **stateless with respect to business logic**. It reflects backend state and validations rather than duplicating them client-side.
+
+**Live deployment:** The frontend is deployed on **Vercel**.
+- **Live URL:** https://shopnest-frontend-tan.vercel.app/
+
+> Note: This service is hosted on a free tier. The first request after inactivity may experience a brief cold start.
+
+
+
+---
+
+## Current Feature Set
+
+### Customer / Client
+- Browse available products
+- Add and remove items from a shopping cart
+- Cart state persists across sessions
+- UI reflects inventory constraints enforced by the backend
+
+### Merchant / Seller
+- Authentication UI (sign up / sign in)
+- Session-aware navigation and views
+- Product management interface (paired with backend CRUD operations)
+- Real-time feedback via notifications for success and error states
+
+---
+
+## Tech Stack
+
+### Core
+- **React** (with Vite)
+- **React Router DOM** (client-side routing)
+- **Tailwind CSS** (utility-first styling)
+- **Axios** (API communication)
+
+### UI & Tooling
+- **Heroicons** (icons)
+- **ESLint** (linting)
+
+---
+
+## Project Structure
+
+The frontend is organized to separate concerns clearly and support scalability.
+
+- **components/**  
+  Reusable UI components
+
+- **context/**  
+  Global state management using React Context  
+  (authentication, cart state, notifications)
+
+- **services/**  
+  API interaction layer (Axios configuration and request helpers)
+
+- **utils/**  
+  Shared utility functions and helpers
+
+- **src/**  
+  Application entry point and core React files
+
+---
+
+## State Management Approach
+
+Global state is handled using **React Context Providers**, composed at the root of the application.
+
+Each provider has a focused responsibility:
+- **MerchantAuthContext** – authentication and session-aware merchant state
+- **CartContext** – shopping cart state and persistence
+- **NotificationContext** – user feedback and UI messaging
+
+This approach avoids prop-drilling while keeping state responsibilities explicit and isolated.
+
+---
+
+## Routing
+
+Client-side routing is handled with **React Router**.
+
+- Public routes are accessible without authentication
+- Authenticated routes adapt based on session state
+- Navigation updates automatically in response to backend authentication status
+
+---
+
+## Backend Integration
+
+The frontend communicates with the backend via **Axios** and is designed to work with **cookie-based session authentication**.
+
+Key considerations:
+- Requests are configured to support credentials when required
+- Frontend behavior assumes the backend is the source of truth
+- Validation errors and success responses are surfaced directly to users via UI notifications
+
+Backend Github repo URL: https://github.com/Miguel-Venegas/shopnest-backend
+
+---
+
+## Environment Configuration
+
+The frontend uses environment variables for backend connectivity.
