@@ -55,28 +55,6 @@ The frontend is intentionally **stateless with respect to business logic**. It r
 
 ---
 
-## Project Structure
-
-The frontend is organized to separate concerns clearly and support scalability.
-
-- **components/**  
-  Reusable UI components
-
-- **context/**  
-  Global state management using React Context  
-  (authentication, cart state, notifications)
-
-- **services/**  
-  API interaction layer (Axios configuration and request helpers)
-
-- **utils/**  
-  Shared utility functions and helpers
-
-- **src/**  
-  Application entry point and core React files
-
----
-
 ## State Management Approach
 
 Global state is handled using **React Context Providers**, composed at the root of the application.
