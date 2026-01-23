@@ -107,4 +107,4 @@ Secure sign-in and account creation using a consistent interface.
 
 
 ![Sign In Success](assets/screenshots/sign-in-success.png)
-![Sign In Failure](assets/screenshots/sign-up-failure.png)
+![Sign In Failure](assets/screenshots/sign-in-failure.png)
