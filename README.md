@@ -125,11 +125,9 @@ Key capabilities include:
 - Remove products from the catalog
 - View current product listings in real time
 
-#####Product Controls
-![Admin Product Controls](assets/screenshots/admin-product-controls.png)
-#####Create
+####Create
 ![Create Product](assets/screenshots/create-product.png)
-#####Edit
+####Edit
 ![Edit Product](assets/screenshots/edit-product.png)
-#####Delete
+####Delete
 ![Delete Product](assets/screenshots/delete-product.png)
