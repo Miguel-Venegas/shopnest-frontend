@@ -105,6 +105,7 @@ Planned improvements and refinements:
 
 Secure sign-in and account creation using a consistent interface.
 
-
+### Sign-in Success
 ![Sign In Success](assets/screenshots/sign-in-success.png)
+### Sign-in Failure
 ![Sign In Failure](assets/screenshots/sign-in-failure.png)
