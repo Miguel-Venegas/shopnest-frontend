@@ -91,17 +91,7 @@ Backend Github repo URL: https://github.com/Miguel-Venegas/shopnest-backend
 
 ---
 
-## Roadmap
-
-Planned improvements and refinements:
-
-- Add product search with filters
-- Implement an autocomplete search component
-- Fix Safari/iOS browser issues related to cookies and CORS
-- Improve cart update responsiveness
-- Fix edge case where items can be added when stock is exhausted
-
-## Authentication Flow
+## Merchant Flow
 
 Secure sign-in and account creation (sign-up) using a consistent interface.
 
@@ -117,6 +107,12 @@ Secure sign-in and account creation (sign-up) using a consistent interface.
 
 ![Sign Up Flow](assets/screenshots/sign-up.png)
 
+### Enables multi-merchant authentication (sign-up and sign-in)
+#### Merchant Example 1
+![Merchant 1](assets/screenshots/merchant-1.png)
+#### Merchant Example 2
+![Merchant 2](assets/screenshots/merchant-2.png)
+
 ### Merchant Admin Dashboard
 #### Product & Inventory Management (CRUD Operations)
 Key capabilities include:
@@ -124,10 +120,25 @@ Key capabilities include:
 - Update pricing and inventory levels
 - Remove products from the catalog
 - View current product listings in real time
+- Field Validation Messages (when appropriate)
+- Error/Success Messages accompanying create/edit/delete changes
 
-####Create
+#### Create
 ![Create Product](assets/screenshots/create-product.png)
-####Edit
-![Edit Product](assets/screenshots/edit-product.png)
-####Delete
+#### Edit
+![Edit Product](assets/screenshots/edit-product-validation.png)
+#### Delete
 ![Delete Product](assets/screenshots/delete-product.png)
+#### Update Message Example
+![Update Product Message](assets/screenshots/update-message-success.png)
+
+
+## Roadmap
+
+Planned improvements and refinements:
+
+- Add product search with filters
+- Implement an autocomplete search component
+- Fix Safari/iOS browser issues related to cookies and CORS
+- Improve cart update responsiveness
+- Fix edge case where items can be added when stock is exhausted
