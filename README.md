@@ -100,3 +100,11 @@ Planned improvements and refinements:
 - Fix Safari/iOS browser issues related to cookies and CORS
 - Improve cart update responsiveness
 - Fix edge case where items can be added when stock is exhausted
+
+## Authentication Flow
+
+Secure sign-in and account creation using a consistent interface.
+
+
+![Sign In Success](assets/screenshots/sign-in-success.png)
+![Sign In Failure](assets/screenshots/sign-up-failure.png)
