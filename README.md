@@ -116,3 +116,20 @@ Secure sign-in and account creation (sign-up) using a consistent interface.
 - **Server-side validation** enforces data integrity, ensuring only well-formed and consistent records are persisted in the database.
 
 ![Sign Up Flow](assets/screenshots/sign-up.png)
+
+### Merchant Admin Dashboard
+#### Product & Inventory Management (CRUD Operations)
+Key capabilities include:
+- Create and edit products
+- Update pricing and inventory levels
+- Remove products from the catalog
+- View current product listings in real time
+
+Product Controls
+![Admin Product Controls](assets/screenshots/admin-product-controls.png)
+Create
+![Create Product](assets/screenshots/create-product.png)
+Edit
+![Edit Product](assets/screenshots/edit-product.png)
+Delete
+![Delete Product](assets/screenshots/delete-product.png)
