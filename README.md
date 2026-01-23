@@ -114,4 +114,5 @@ Secure sign-in and account creation (sign-up) using a consistent interface.
 
 - **Inline, field-level validation** with clear helper and error messages, giving users immediate feedback and reducing failed submissions.
 - **Server-side validation** enforces data integrity, ensuring only well-formed and consistent records are persisted in the database.
+
 ![Sign Up Flow](assets/screenshots/sign-up.png)
