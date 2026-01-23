@@ -103,9 +103,15 @@ Planned improvements and refinements:
 
 ## Authentication Flow
 
-Secure sign-in and account creation using a consistent interface.
+Secure sign-in and account creation (sign-up) using a consistent interface.
 
 ### Sign-in Success
 ![Sign In Success](assets/screenshots/sign-in-success.png)
 ### Sign-in Failure
 ![Sign In Failure](assets/screenshots/sign-in-failure.png)
+
+### Sign-Up Flow & Validation
+
+- **Inline, field-level validation** with clear helper and error messages, giving users immediate feedback and reducing failed submissions.
+- **Server-side validation** enforces data integrity, ensuring only well-formed and consistent records are persisted in the database.
+![Sign Up Flow](assets/screenshots/sign-up.png)
