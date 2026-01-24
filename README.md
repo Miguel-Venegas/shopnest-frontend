@@ -1,6 +1,8 @@
 # ShopNest — Frontend
 
-Frontend application for **ShopNest**, a full-stack e-commerce web app.  
+Frontend application for **ShopNest**, a merchant-focused e-commerce platform with guest customer browsing.
+
+  
 Built with **React (Vite)** and **Tailwind CSS**, and designed to work with a session-based backend API.
 
 This repository focuses on **UI state management, routing, and frontend–backend integration**, while core business logic and data integrity are handled by the backend.
@@ -9,10 +11,11 @@ This repository focuses on **UI state management, routing, and frontend–backen
 
 ## Overview
 
-The ShopNest frontend provides the user interface for two primary experiences:
+The ShopNest frontend provides the user interface for two primary experiences, with a primary emphasis on merchant product management:
 
-- **Customers / Clients** can browse products and manage a shopping cart without creating an account.
 - **Merchants / Sellers** can authenticate and manage their product listings.
+- **Customers / Clients** can browse products and manage a shopping cart without creating an account.
+
 
 The frontend is intentionally **stateless with respect to business logic**. It reflects backend state and validations rather than duplicating them client-side.
 
@@ -21,23 +24,23 @@ The frontend is intentionally **stateless with respect to business logic**. It r
 
 > Note: This service is hosted on a free tier. The first request after inactivity may experience a brief cold start.
 
-
-
 ---
 
 ## Current Feature Set
 
-### Customer / Client
-- Browse available products
-- Add and remove items from a shopping cart
-- Cart state persists across sessions
-- UI reflects inventory constraints enforced by the backend
+### Merchant / Seller (Primary Use Case)
 
-### Merchant / Seller
 - Authentication UI (sign up / sign in)
 - Session-aware navigation and views
 - Product management interface (paired with backend CRUD operations)
 - Real-time feedback via notifications for success and error states
+
+### Customer / Client (Guest Experience)
+
+- Browse available products
+- Add and remove items from a shopping cart
+- Cart state persists across sessions
+- UI reflects inventory constraints enforced by the backend
 
 ---
 
@@ -114,6 +117,9 @@ Secure sign-in and account creation (sign-up) using a consistent interface.
 ![Merchant 2](assets/screenshots/merchant-2.png)
 
 ### Merchant Admin Dashboard
+
+The merchant dashboard is the core focus of the frontend and demonstrates session-aware CRUD workflows, validation handling, and UI state synchronization with the backend.
+
 #### Product & Inventory Management (CRUD Operations)
 Key capabilities include:
 - Create and edit products
@@ -131,6 +137,26 @@ Key capabilities include:
 ![Delete Product](assets/screenshots/delete-product.png)
 #### Update Message Example
 ![Update Product Message](assets/screenshots/update-message-success.png)
+
+
+## Customer Flow
+
+#### Browse Products and Add or Remove Items from the Cart ( No Account Required )
+
+![Home Page](assets/screenshots/home.png)
+
+#### Product Inventory Persists Across Sessions
+
+![Cart Persists Across Sessions](assets/screenshots/cart-persistence.png)
+
+#### Cart Items Managed via Product Cards and a Dedicated Cart Page
+
+
+##### Card Management
+![Product Card Management](assets/screenshots/card-cart-managemenet.png)
+
+##### List Page Management
+![List Page Management](assets/screenshots/list-page-cart-management.png)
 
 
 ## Roadmap
