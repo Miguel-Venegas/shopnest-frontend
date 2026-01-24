@@ -153,7 +153,7 @@ Key capabilities include:
 
 
 ##### Card Management
-![Product Card Management](assets/screenshots/card-cart-managemenet.png)
+![Product Card Management](assets/screenshots/card-cart-management.png)
 
 ##### List Page Management
 ![List Page Management](assets/screenshots/list-page-cart-management.png)
